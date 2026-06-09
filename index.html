@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <!-- Title -->
     <h1>Alphabot Remote Control - WebApp</h1>
 
@@ -25,6 +26,7 @@
     </header>
 
     <main>
+
         <div class="main-container">
             <div id="error-alert" class="alert">
                 ⚠️ An error occurred. Please try again.
@@ -49,27 +51,27 @@
                 <div class="column">
                     <div class="row switch">
                         <label class="switch-label">
-                            <input type="checkbox" id="ble-remote">
+                            <input type="radio" name = "mode" id="ble-remote">
                             <span class="slider"></span>
                         </label>
                     </div>
                     <div class="row switch">
                         <label class="switch-label">
-                            <input type="checkbox" id="ir-remote">
+                            <input type="radio" name = "mode" id="ir-remote">
                             <span class="slider"></span>
                         </label>
                     </div>
                     <div class="row switch">
                         <label class="switch-label">
-                            <input type="checkbox" id="line-following">
+                            <input type="radio" name = "mode" id="line-following">
                             <span class="slider"></span>
                         </label>
                     </div>
                 </div>
                 <div class="column mobile-hide">
-                    <img src="robot_martien.png" alt="Robot Martien">
+                    <img src="robot_martien.png" alt="Robot Martien" >
                 </div>
-            </div>
+            </div> 
 
             <div id="direction-container" class="direction-container">
                 <button class="direction-button" id="forward"></button>

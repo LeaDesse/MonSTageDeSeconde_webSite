@@ -56,11 +56,12 @@ function disconnectDevice() {
     }
 }
 
-const switches = document.querySelectorAll('.switch-label input[type="checkbox"]');
+const switches = document.querySelectorAll('.switch-label input[type="radio"]');
 const bleRemote = document.getElementById('ble-remote');
 const irRemote = document.getElementById('ir-remote');
 const lineFollowing = document.getElementById('line-following');
 const directionContainer = document.getElementById('direction-container');
+const buttons = document.querySelectorAll('.direction-button');
 
 switches.forEach(switchElement => {
     switchElement.addEventListener('change', () => {
@@ -68,18 +69,35 @@ switches.forEach(switchElement => {
             switches.forEach(otherSwitch => {
                 if (otherSwitch !== switchElement) {
                     otherSwitch.checked = false;
+                    
                 }
             });
 
             if (bleRemote.checked) {
                 enqueueCommand('Mode BLE');
                 directionContainer.classList.add('show');
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.style.cursor = "pointer";
+                });
+
+                
             } else if (irRemote.checked) {
                 enqueueCommand('Mode IR');
                 directionContainer.classList.remove('show');
+                buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.style.cursor = "default";
+                });
+                
             } else if (lineFollowing.checked) {
                 enqueueCommand('Mode Line');
                 directionContainer.classList.remove('show');
+                buttons.forEach(btn => {
+                    btn.disabled = true;
+                    btn.style.cursor = "default";   
+                });
+            
             }
         }
     });
