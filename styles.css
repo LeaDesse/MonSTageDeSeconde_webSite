@@ -411,7 +411,7 @@ input:checked + .slider:before {
 #right.active{
     background-position: 100% 50%;
 }
-#backwards.active{
+#backward.active{
     background-position: 50% 100%;
 }
 
@@ -501,9 +501,7 @@ footer {
         top: 40px;
     }
 
-    .header-container {
-        height: 60px;
-    }
+
     
     .header-logo-section {
         padding-left: 8px;
