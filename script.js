@@ -63,6 +63,13 @@ const lineFollowing = document.getElementById('line-following');
 const directionContainer = document.getElementById('direction-container');
 const buttons = document.querySelectorAll('.direction-button');
 
+directionContainer.classList.remove('show');
+                buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.style.cursor = "default";
+                })
+
+
 switches.forEach(switchElement => {
     switchElement.addEventListener('change', () => {
         if (switchElement.checked) {
@@ -72,6 +79,7 @@ switches.forEach(switchElement => {
                     
                 }
             });
+
 
             if (bleRemote.checked) {
                 enqueueCommand('Mode BLE');
@@ -189,7 +197,7 @@ function showError(message, error) {
         setTimeout(() => {
             alertBox.classList.add('hidden');
             console.log('Adding hidden class');
-        }, 400); // This should match the transition duration
+        }, 400); 
     }, 4000);
 }
 

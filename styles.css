@@ -41,7 +41,7 @@ header {
     width: 100%;
     background-color: white;
     padding: 0;
-    height: 150vh;
+    height: 60 px;
     
     
     align-self: flex-start;
@@ -218,10 +218,7 @@ button:hover {
     color: #ffffff;
 }
 
-button:active {
-    
 
-}
 
 .switches-section {
     display: flex;
@@ -343,6 +340,7 @@ input:checked + .slider:before {
     transition: background-color 0.3s ease;
     border: none;
     cursor: pointer;
+    transition: background-position 25s ease-in-out;
 }
 
 .direction-container #forward {
@@ -350,7 +348,7 @@ input:checked + .slider:before {
     grid-column: 2;
     grid-row: 1;
     aspect-ratio: 1 / 1;
-    background-position: top;
+    
 }
 
 .direction-container #left {
@@ -358,7 +356,7 @@ input:checked + .slider:before {
     grid-column: 1;
     grid-row: 2;
     aspect-ratio: 1 / 1;
-    background-position: left;
+    
     
 }
 
@@ -368,6 +366,7 @@ input:checked + .slider:before {
     grid-row: 2;
     aspect-ratio: 1 / 1;
     
+    
 }
 
 .direction-container #right {
@@ -375,7 +374,7 @@ input:checked + .slider:before {
     grid-column: 3;
     grid-row: 2;
     aspect-ratio: 1 / 1;
-    background-position: right;
+    
     
 }
 
@@ -383,8 +382,7 @@ input:checked + .slider:before {
     clip-path : polygon(0% 20%, 100% 20%, 50% 100%);
     grid-column: 2;
     grid-row: 3;
-    aspect-ratio: 1 / 1;
-    background-position: bottom;
+    aspect-ratio: 1 / 1; 
 }
 
 .direction-button:hover {
@@ -393,14 +391,29 @@ input:checked + .slider:before {
 }
 
 .direction-button.active {
-    background-color: #03234B;
-    
     background-image: url("watches.jpg");
-    background-position: center;
-    background-size: fill;
+    background-size: auto;
     background-repeat: no-repeat;
 }
 
+#forward.active{
+    background-position: 50% 0%;
+}
+
+#left.active{
+    background-position: 0% 50%;
+}
+
+#stop.active{
+    background-position: 50% 50%;
+}
+
+#right.active{
+    background-position: 100% 50%;
+}
+#backwards.active{
+    background-position: 50% 100%;
+}
 
 footer {
     align-self: flex-end;
@@ -426,7 +439,6 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 30px;
-
 }
 
 .contact-info {
