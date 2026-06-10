@@ -155,14 +155,35 @@ directionButtons.forEach(button => {
             const y = Math.random() * 100;
 
             button.style.backgroundPosition = `${x}% ${y}%`;
-        }, 2000); 
+        }, 10); 
+            button.style.transform = "scale(1.25)";
     });
 
     button.addEventListener('mouseup', () => {
         clearInterval(interval);
+        button.style.transform = "scale(1)";
     });
 
     button.addEventListener('mouseleave', () => {
+        clearInterval(interval);
+    });
+
+    button.addEventListener('touchstart', () => {
+        interval = setInterval(() => {
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+
+            button.style.backgroundPosition = `${x}% ${y}%`;
+        }, 10); 
+            button.style.transform = "scale(1.25)";
+    });
+
+    button.addEventListener('touchend', () => {
+        clearInterval(interval);
+        button.style.transform = "scale(1)";
+    });
+
+    button.addEventListener('touchcancel', () => {
         clearInterval(interval);
     });
 });
