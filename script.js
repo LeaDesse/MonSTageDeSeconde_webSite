@@ -146,6 +146,27 @@ directionButtons.forEach(button => {
     });
 });
 
+directionButtons.forEach(button => {
+    let interval;
+
+    button.addEventListener('mousedown', () => {
+        interval = setInterval(() => {
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+
+            button.style.backgroundPosition = `${x}% ${y}%`;
+        }, 2000); 
+    });
+
+    button.addEventListener('mouseup', () => {
+        clearInterval(interval);
+    });
+
+    button.addEventListener('mouseleave', () => {
+        clearInterval(interval);
+    });
+});
+
 async function processCommandQueue() {
     if (isOperationInProgress || commandQueue.length === 0) {
         return;
